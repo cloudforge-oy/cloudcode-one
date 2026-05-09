@@ -18,7 +18,7 @@ curl -fsSL https://cloudcode.one/install | bash
 
 # Package managers
 npm i -g cloudcode@latest          # or bun/pnpm/yarn
-nix run github:cloudcode-one/cloudcode
+nix run github:cloudforge-oy/cloudcode-one
 ```
 
 #### Installation directory

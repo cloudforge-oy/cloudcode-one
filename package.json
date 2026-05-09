@@ -100,7 +100,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cloudcode-one/cloudcode"
+    "url": "git+ssh://git@github.com/cloudforge-oy/cloudcode-one.git"
   },
   "license": "MIT",
   "prettier": {
