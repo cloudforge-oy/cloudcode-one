@@ -8,6 +8,10 @@
   <a href="https://www.npmjs.com/package/cloudcode"><img alt="npm" src="https://img.shields.io/npm/v/cloudcode?style=flat-square" /></a>
 </p>
 
+<p align="center">
+  <img alt="cloudcode TUI" src="./assets/banner.png" width="720" />
+</p>
+
 ---
 
 ### Installation
