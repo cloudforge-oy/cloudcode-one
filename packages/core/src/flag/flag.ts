@@ -1,6 +1,17 @@
 import { Config } from "effect"
 import { InstallationChannel } from "../installation/version"
 
+// Coexistence shim: CLOUDCODE_<X> env vars take precedence over OPENCODE_<X>.
+// This lets a user set CLOUDCODE_CONFIG_DIR / CLOUDCODE_DB / etc. for cloudcode
+// without affecting an opencode install on the same machine. Internal Flag.*
+// keys keep their OPENCODE_ names so upstream merges stay tractable.
+for (const key of Object.keys(process.env)) {
+  if (!key.startsWith("CLOUDCODE_")) continue
+  const opencodeKey = "OPENCODE_" + key.slice("CLOUDCODE_".length)
+  const value = process.env[key]
+  if (value !== undefined) process.env[opencodeKey] = value
+}
+
 function truthy(key: string) {
   const value = process.env[key]?.toLowerCase()
   return value === "true" || value === "1"
